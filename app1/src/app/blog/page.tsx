@@ -1,4 +1,6 @@
-import React from 'react'
+export const metadata = {
+  title: "Blog Page - Nik"
+}
 
 const Blog = () => {
   return (

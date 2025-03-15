@@ -1,16 +1,27 @@
-import React from 'react'
+import Link from "next/link"
 
-const Products = () => {
+interface ProductProps {
+  key: number;
+  productId: number;
+}
+
+export function Product({ key, productId }: ProductProps ) {
+  return (
+    <h2 id={`${key}`}><Link href={`/products/${productId}`}>Product {productId}</Link></h2>
+  )
+}
+
+export default function Products() {
+  const productIds = [1, 2, 3];
   return (
     <div>
-        <h1>Products</h1>
-        <ul className='list-disc'>
-            <li><h1>Product1</h1></li>
-            <li><h1>Product2</h1></li>
-            <li><h1>Product3</h1></li>
-        </ul>
+        <Link href="/">Home</Link>
+        <h1>Product List</h1>
+        {productIds.map((productId) => (
+          <Product key={productId} productId={productId} />
+        ))}
+        <h2><Link href="/products/23" replace>Product {23}</Link></h2>
     </div>
   )
 }
 
-export default Products

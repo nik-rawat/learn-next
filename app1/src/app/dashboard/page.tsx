@@ -1,3 +1,9 @@
+export const metadata = {
+  title: {
+    absolute: "Dashboard - Nik",
+  }
+}
+
 const BarChart = () => {
   return (
     <h1>BarChart</h1>
